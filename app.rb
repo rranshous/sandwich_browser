@@ -38,7 +38,7 @@ end
 post '/image/:id/favorite' do |id|
   favorator = Favorator.new
   favorator.love_on id
-  redirect "/image/#{id}", 302
+  halt 200
 end
 
 # push to random image url

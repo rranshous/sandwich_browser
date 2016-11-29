@@ -10,7 +10,7 @@ class MetaWriter
   def add data
     json = data.to_json
     File.open(meta_path, 'a') do |fh|
-      fh.write "#{json}"
+      fh.write "\n#{json}"
     end
   end
 

@@ -1,3 +1,5 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
 <style>
   img { max-width: 750px; max-height: 750px; }
 </style>
@@ -9,5 +11,9 @@
 </header>
 
 <% @image_ids.each do |id| %>
-  <a href="/image/<%= id %>"><img src="/image/<%= id %>"/></a>
+  <a href="#"
+    onclick="$.ajax({ type: 'POST',
+                      url: '/image/<%= id %>/favorite',
+                      async: true })">
+  <img src="/image/<%= id %>"/></a>
 <% end %>
