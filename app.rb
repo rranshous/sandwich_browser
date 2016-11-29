@@ -6,6 +6,9 @@ require_relative 'pager'
 require_relative 'idr'
 require_relative 'favorator'
 
+STDOUT.sync = true
+STDERR.sync = true
+
 IMAGE_DIR = ENV['IMAGE_DIR'] || './data'
 
 # create index of images

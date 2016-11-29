@@ -10,6 +10,10 @@
   <a href="/gallery?page_size=<%= @page_size %>&page=<%= @next_page_num %>">Next Page</a>
 </header>
 
+<br/>
+<br/>
+<br/>
+
 <% @image_ids.each do |id| %>
   <a href="#"
     onclick="$.ajax({ type: 'POST',
@@ -17,3 +21,13 @@
                       async: true })">
   <img src="/image/<%= id %>"/></a>
 <% end %>
+
+<br/>
+<br/>
+<br/>
+
+<footer>
+  <a href="/gallery?page_size=<%= @page_size %>&page=<%= @prev_page_num %>">Prev Page</a>
+  |
+  <a href="/gallery?page_size=<%= @page_size %>&page=<%= @next_page_num %>">Next Page</a>
+</footer>
