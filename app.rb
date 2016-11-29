@@ -32,7 +32,7 @@ get '/gallery' do
   @image_ids, @next_page_num, @prev_page_num = \
     image_pager.data_for_page page, @page_size
 
-  erb :"index.html"
+  erb :"gallery.html"
 end
 
 post '/image/:id/favorite' do |id|
