@@ -1,0 +1,13 @@
+<style>
+  img { max-width: 750px; max-height: 750px; }
+</style>
+
+<header>
+  <a href="/gallery?page_size=<%= @page_size %>&page=<%= @prev_page_num %>">Prev Page</a>
+  |
+  <a href="/gallery?page_size=<%= @page_size %>&page=<%= @next_page_num %>">Next Page</a>
+</header>
+
+<% @image_ids.each do |id| %>
+  <a href="/image/<%= id %>"><img src="/image/<%= id %>"/></a>
+<% end %>

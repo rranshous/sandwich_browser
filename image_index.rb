@@ -16,6 +16,10 @@ class ImageIndex
     puts "found images: #{@all_file_paths.length}"
   end
 
+  def all_ids
+    @all_file_paths.map{ |p| encode_as_id p }
+  end
+
   def random_id
     file_path = @all_file_paths.sample
     encode_as_id file_path
