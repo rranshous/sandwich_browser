@@ -6,7 +6,7 @@ require_relative 'pager'
 require_relative 'idr'
 require_relative 'favorator'
 
-IMAGE_DIR='./data'
+IMAGE_DIR = ENV['IMAGE_DIR'] || './data'
 
 # create index of images
 image_index = ImageIndex.new IMAGE_DIR
