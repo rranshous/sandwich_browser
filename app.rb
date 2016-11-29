@@ -1,8 +1,10 @@
 require 'sinatra'
 require 'sinatra/advanced_routes'
+
 require_relative 'image_index'
 require_relative 'pager'
-
+require_relative 'idr'
+require_relative 'favorator'
 
 IMAGE_DIR='./data'
 
@@ -33,10 +35,16 @@ get '/gallery' do
   erb :"index.html"
 end
 
+post '/image/:id/favorite' do |id|
+  favorator = Favorator.new
+  favorator.love_on id
+  redirect "/image/#{id}", 302
+end
+
 # push to random image url
 get '/image/random' do
   random_image_id = image_index.random_id
-  redirect "/image/#{random_image_id}", 303
+  redirect "/image/#{random_image_id}", 302
 end
 
 # return data for an image by it's id
